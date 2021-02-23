@@ -10,16 +10,24 @@
     <title></title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <input type="text" id="text-input" />
+    <input type="text" id="text-input" placeholder="Enter A Word" />
     <button id="translate-button" onclick="newWord()">Translate</button>
-
-    <span id="translated-word"></span>
-    <span id="translated-word-italian"></span>
-    <span id="translated-word-french"></span>
-    <span id="translated-word-portuguese"></span>
+    <div class="language-div">
+      <img src="assets/spain.png" /><span id="translated-word"></span>
+    </div>
+    <div class="language-div">
+      <img src="assets/italy.png" /><span id="translated-word-italian"></span>
+    </div>
+    <div class="language-div">
+      <img src="assets/france.png" /><span id="translated-word-french"></span>
+    </div>
+    <div class="language-div">
+      <img src="assets/brazil.png" />
+      <span id="translated-word-portuguese"></span>
+    </div>
 
     <script src="translate.js"></script>
   </body>
