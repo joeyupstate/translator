@@ -29,6 +29,8 @@ h1{
   border-right:none;
   background-color:rgb(176, 234, 238);
   margin-top:50px;
+  outline: none;
+  width:200px;
   
 }
 #translate-button {
