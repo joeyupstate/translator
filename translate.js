@@ -3,8 +3,10 @@ function newWord(){
 
     let textToTranslate= document.getElementById("text-input").value;
 let translatedWord= document.getElementById("translated-word");
-
-
+if(textToTranslate.length = 0 || textToTranslate.length === 1){
+    alert("please enter a valid word")
+}
+else{
 fetch("https://language-translation.p.rapidapi.com/translateLanguage/translate?text=" + textToTranslate + "&type=plain&target=es", {
 	"method": "GET",
 	"headers": {
@@ -30,6 +32,7 @@ newWordPortuguese()
 	console.error(err);
 });
 
+}
 }
 
 
