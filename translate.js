@@ -3,7 +3,7 @@ function newWord(){
 
     let textToTranslate= document.getElementById("text-input").value;
 let translatedWord= document.getElementById("translated-word");
-if(textToTranslate.length = 0 || textToTranslate.length === 1){
+if(textToTranslate.length = 0 || textToTranslate.length === 1 || textToTranslate === ""){
     alert("please enter a valid word")
 }
 else{
@@ -19,7 +19,7 @@ fetch("https://language-translation.p.rapidapi.com/translateLanguage/translate?t
     response.json().then((data)=>{
         console.log(data.translatedText)
         translatedWord.innerHTML = data.translatedText;
-        newWordItalian()
+newWordItalian()
 newWordFrench()
 newWordPortuguese()
 
@@ -36,9 +36,12 @@ newWordPortuguese()
 }
 
 
+
+
+
 function newWordItalian(){
 
-    let textToTranslate= document.getElementById("text-input").value;
+let textToTranslate= document.getElementById("text-input").value;
 let translatedWord= document.getElementById("translated-word");
 let translatedWordItalian= document.getElementById("translated-word-italian");
 
@@ -63,6 +66,12 @@ fetch("https://language-translation.p.rapidapi.com/translateLanguage/translate?t
 });
 
 }
+
+
+
+
+
+
 function newWordFrench(){
 
     let textToTranslate= document.getElementById("text-input").value;
@@ -90,6 +99,10 @@ fetch("https://language-translation.p.rapidapi.com/translateLanguage/translate?t
 });
 
 }
+
+
+
+
 
 function newWordPortuguese(){
 

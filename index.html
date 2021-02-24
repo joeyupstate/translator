@@ -13,8 +13,11 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <h1>RLS Translator</h1>
     <input type="text" id="text-input" placeholder="Enter A Word" />
     <div id="translate-button" onclick="newWord()">TRANSLATE</div>
+    
+    <div class = "language-display-container">
     <div class="language-div">
       <img src="assets/spain.png" /><span id="translated-word"></span>
     </div>
@@ -27,6 +30,7 @@
     <div class="language-div">
       <img src="assets/brazil.png" />
       <span id="translated-word-portuguese"></span>
+    </div>
     </div>
 
     <script src="translate.js"></script>
