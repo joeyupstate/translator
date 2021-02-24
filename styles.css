@@ -14,27 +14,30 @@ body {
 
   height: 100%;
 }
-h1{
-    font-family: "Varela Round", sans-serif;
-    font-size:16px;
-    color:red;
-    align-self: start;
+h1 {
+  font-family: "Varela Round", sans-serif;
+  font-size: 16px;
+  color: red;
+  align-self: start;
 }
 #text-input {
   margin-bottom: 100px;
   font-size: 28px;
   font-family: "Varela Round", sans-serif;
-  border-top:none;
-  border-left:none;
-  border-right:none;
-  background-color:rgb(176, 234, 238);
-  margin-top:50px;
-  outline: none;
-  width:200px;
-  
+  outline: 0;
+
+  margin-top: 50px;
+  border: 1px solid grey;
+  width: 250px;
+  border-radius: 20px;
+  border: 1px solid black;
+  text-align: center;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+  -moz-box-shadow: 0 10px 6px -6px #777;
+  box-shadow: 0 6px 6px -6px #777;
 }
 #translate-button {
-    background-color:white;
+  background-color: white;
   height: 40px;
   width: 120px;
   display: flex;
@@ -43,12 +46,11 @@ h1{
   border-radius: 10px;
   margin-bottom: 50px;
   font-family: "Varela Round", sans-serif;
- font-weight: bold;
+  font-weight: bold;
   color: black;
   -webkit-box-shadow: 0 10px 6px -6px #777;
-     -moz-box-shadow: 0 10px 6px -6px #777;
-          box-shadow: 0 6px 6px -6px #777;
-       
+  -moz-box-shadow: 0 10px 6px -6px #777;
+  box-shadow: 0 6px 6px -6px #777;
 }
 .language-div {
   height: 80px;
@@ -60,8 +62,8 @@ h1{
   justify-content: flex-start;
   align-items: center;
   -webkit-box-shadow: 0 10px 6px -6px #777;
-     -moz-box-shadow: 0 10px 6px -6px #777;
-          box-shadow: 0 6px 6px -6px #777;
+  -moz-box-shadow: 0 10px 6px -6px #777;
+  box-shadow: 0 6px 6px -6px #777;
 }
 
 .language-div img {
