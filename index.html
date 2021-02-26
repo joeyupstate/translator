@@ -16,22 +16,41 @@
     <h1>RLS Translator</h1>
     <input type="text" id="text-input" placeholder="Enter A Word" />
     <div id="translate-button" onclick="newWord()">TRANSLATE</div>
-    
-    <div class = "language-display-container">
-    <div class="language-div">
-      <img src="assets/spain.png" /><span id="translated-word"></span>
-    </div>
-    <div class="language-div">
-      <img src="assets/italy.png" /><span id="translated-word-italian"></span>
-    </div>
-    <div class="language-div">
-      <img src="assets/france.png" /><span id="translated-word-french"></span>
-    </div>
-    <div class="language-div">
-      <img src="assets/brazil.png" />
-      <span id="translated-word-portuguese"></span>
-    </div>
-    </div>
+
+    <div class="language-display-container">
+
+      <div class="language-div">
+        <div class="flag-and-title">
+        <h2>Spanish</h2>
+        <img src="assets/spain.png" />
+        </div>
+        <span id="translated-word"></span>
+      </div>
+
+      <div class="language-div">
+        <div class="flag-and-title">
+        <h2>Italian</h2>
+        <img src="assets/italy.png" />
+        </div>
+        <span id="translated-word-italian"></span>
+      </div>
+
+      <div class="language-div">
+        <div class="flag-and-title">
+        <h2>French</h2>
+        <img src="assets/france.png" />
+        </div>
+        <span id="translated-word-french"></span>
+      </div>
+
+      <div class="language-div">
+        <div class="flag-and-title">
+        <h2>Portuguese</h2>
+        <img src="assets/brazil.png" />
+      </div>
+        <span id="translated-word-portuguese"></span>
+      </div>
+  
 
     <script src="translate.js"></script>
   </body>

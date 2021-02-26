@@ -11,28 +11,35 @@ body {
   align-items: center;
   flex-direction: column;
   background-color: rgb(176, 234, 238);
-
+  font-family: "Varela Round", sans-serif;
   height: 100%;
 }
-.language-display-container{
-  display:flex;
+.language-display-container {
+  display: flex;
   justify-content: center;
-  flex-direction:column;
+  flex-direction: column;
   align-items: center;
- 
-  width:100%;
+
+  width: 100%;
 }
 h1 {
-  font-family: "Varela Round", sans-serif;
+ 
   font-size: 16px;
   color: rgb(37, 194, 241);
   align-self: center;
-  
+}
+
+h2{
+
+  color:rgb(176, 234, 238);
+  font-size:12px;
+  font-style: italic;
+
 }
 #text-input {
   margin-bottom: 50px;
   font-size: 28px;
-  font-family: "Varela Round", sans-serif;
+  
   outline: 0;
 
   margin-top: 100px;
@@ -54,16 +61,16 @@ h1 {
   align-items: center;
   border-radius: 10px;
   margin-bottom: 50px;
-  font-family: "Varela Round", sans-serif;
+  
   font-weight: bold;
   color: black;
   -webkit-box-shadow: 0 10px 6px -6px #777;
   -moz-box-shadow: 0 10px 6px -6px #777;
   box-shadow: 0 6px 6px -6px #777;
 }
-#translate-button:hover{
+#translate-button:hover {
   cursor: pointer;
-  background-color:rgb(253, 232, 232);
+  background-color: rgb(253, 232, 232);
 }
 .language-div {
   height: 80px;
@@ -80,54 +87,66 @@ h1 {
   box-shadow: 0 6px 6px -6px #777;
 }
 
+.flag-and-title{
+
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left:5px;
+}
+
+
 .language-div img {
-  height: 60px;
-  width: 60px;
+  height: 50px;
+  width: 50px;
   margin-left: 10px;
+  margin-bottom:12px;
 }
 
 #translated-word-french {
-  font-family: "Varela Round", sans-serif;
+ 
   font-size: 24px;
   margin-left: 10px;
-  margin-top:0px;
+  margin-top: 20px;
 }
 #translated-word-italian {
-  font-family: "Varela Round", sans-serif;
+  
   font-size: 24px;
   margin-left: 10px;
-  margin-top:0px;
+  margin-top: 20px;
 }
 
 #translated-word-portuguese {
-  font-family: "Varela Round", sans-serif;
   font-size: 24px;
   margin-left: 10px;
-  margin-top:0px;
+  margin-top: 20px;
 }
 #translated-word {
-  font-family: "Varela Round", sans-serif;
+  
   font-size: 24px;
   margin-left: 10px;
-  margin-top:0px;
+  margin-top: 20px;
 }
 
 @media only screen and (min-width: 700px) {
+
+  h2{
+    font-size:18px;
+  }
   #text-input {
     margin-bottom: 100px;
     font-size: 38px;
-    font-family: "Varela Round", sans-serif;
-    outline: 0;
   
+   
+
     margin-top: 50px;
-    border: 1px solid grey;
+   
     width: 350px;
     border-radius: 20px;
-    border: 1px solid black;
+    
     text-align: center;
-    -webkit-box-shadow: 0 10px 6px -6px #777;
-    -moz-box-shadow: 0 10px 6px -6px #777;
-    box-shadow: 0 6px 6px -6px #777;
+ 
   }
   #translate-button {
     background-color: white;
@@ -136,126 +155,128 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
+   
     margin-bottom: 50px;
-    font-family: "Varela Round", sans-serif;
-    font-weight: bold;
-    color: black;
-    -webkit-box-shadow: 0 10px 6px -6px #777;
-    -moz-box-shadow: 0 10px 6px -6px #777;
-    box-shadow: 0 6px 6px -6px #777;
+   
+
   }
   .language-div {
     height: 150px;
     width: 70%;
-    background: rgb(99, 213, 247);
+    
     margin: 10px;
-    border-radius: 10px;
+  
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: row;
-    -webkit-box-shadow: 0 10px 6px -6px #777;
-    -moz-box-shadow: 0 10px 6px -6px #777;
-    box-shadow: 0 6px 6px -6px #777;
   }
-  
+
+
   .language-div img {
-    height: 80px;
-    width: 80px;
+    height: 90px;
+    width: 90px;
     margin-left: 10px;
   }
   #translated-word-french {
-    font-family: "Varela Round", sans-serif;
+    
     font-size: 34px;
     margin-left: 10px;
-    margin-top:0px;
+    margin-top: 30px;
   }
   #translated-word-italian {
-    font-family: "Varela Round", sans-serif;
+    
     font-size: 34px;
     margin-left: 10px;
-    margin-top:0px;
-  }
-  
-  #translated-word-portuguese {
-    font-family: "Varela Round", sans-serif;
-    font-size: 34px;
-    margin-left: 10px;
-    margin-top:0px;
-  }
-  #translated-word {
-    font-family: "Varela Round", sans-serif;
-    font-size: 34px;
-    margin-left: 10px;
-    margin-top:0px;
+    
+    margin-top: 30px;
   }
 
+  #translated-word-portuguese {
+
+    font-size: 34px;
+    margin-left: 10px;
+    margin-top: 30px;
+  }
+  #translated-word {
+
+    font-size: 34px;
+    margin-left: 10px;
+    margin-top: 30px;
+  }
 }
 
 @media only screen and (min-width: 1025px) {
-
   body {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    background-color: rgb(176, 234, 238);
-  
-    height: 100%;
+   
+
   }
-  .language-display-container{
-    display:flex;
+
+  h2{
+    font-size:22px;
+  }
+  .language-display-container {
+    display: flex;
     justify-content: center;
-    flex-direction:row;
+    flex-direction: row;
     align-items: center;
-  
-    width:100%;
+
+    width: 100%;
   }
   .language-div {
     height: 250px;
-    width:300px;
+    width: 300px;
     background: rgb(99, 213, 247);
     margin: 10px;
-    border-radius: 10px;
+    
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    -webkit-box-shadow: 0 10px 6px -6px #777;
-    -moz-box-shadow: 0 10px 6px -6px #777;
-    box-shadow: 0 6px 6px -6px #777;
-  }
   
+  }
+
   .language-div img {
     height: 120px;
     width: 120px;
     margin-left: 10px;
+    
   }
   #translated-word-french {
-    font-family: "Varela Round", sans-serif;
+    
     font-size: 34px;
     margin-left: 10px;
-    margin-top:20px;
+    margin-top: 20px;
+    margin-bottom:15px;
   }
   #translated-word-italian {
-    font-family: "Varela Round", sans-serif;
+ 
     font-size: 34px;
     margin-left: 10px;
-    margin-top:20px;
-  }
-  
-  #translated-word-portuguese {
-    font-family: "Varela Round", sans-serif;
-    font-size: 34px;
-    margin-left: 10px;
-    margin-top:20px;
-  }
-  #translated-word {
-    font-family: "Varela Round", sans-serif;
-    font-size: 34px;
-    margin-left: 10px;
-    margin-top:20px;
+    margin-top: 20px;
+    margin-bottom:15px;
   }
 
+  #translated-word-portuguese {
+    
+    font-size: 34px;
+    margin-left: 10px;
+    margin-top: 20px;
+  
+    margin-bottom:15px;
+
+  }
+  #translated-word {
+    
+    font-size: 34px;
+    margin-left: 10px;
+    margin-top: 20px;
+
+    margin-bottom:15px;
+    
+  }
 }
