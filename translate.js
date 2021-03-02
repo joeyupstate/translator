@@ -1,7 +1,15 @@
-function newWord() {
+let translatedWord = document.getElementById("translated-word");
+let translatedWordItalian = document.getElementById("translated-word-italian");
+let translatedWordFrench = document.getElementById("translated-word-french");
+let translatedWordPortuguese = document.getElementById("translated-word-portuguese");
+let translateButton = document.getElementById("translate-button")
+
+
+
+
+function newWord(url,lan) {
   let textToTranslate = document.getElementById("text-input").value;
-  let translatedWord = document.getElementById("translated-word");
-  if (
+if (
     (textToTranslate.length =
       0 || textToTranslate.length === 1 || textToTranslate === "")
   ) {
@@ -10,7 +18,7 @@ function newWord() {
     fetch(
       "https://language-translation.p.rapidapi.com/translateLanguage/translate?text=" +
         textToTranslate +
-        "&type=plain&target=es",
+        "&type=plain&target=" + url,
       {
         method: "GET",
         headers: {
@@ -22,13 +30,11 @@ function newWord() {
     )
       .then((response) => {
         console.log(response);
-        response.json().then((data) => {
+        response.json()
+        .then((data) => {
           console.log(data.translatedText);
-          translatedWord.innerHTML = data.translatedText;
-          newWordItalian();
-          newWordFrench();
-          newWordPortuguese();
-        });
+          lan.innerHTML = data.translatedText;
+         });
       })
 
       .catch((err) => {
@@ -37,99 +43,21 @@ function newWord() {
   }
 }
 
-function newWordItalian() {
-  let textToTranslate = document.getElementById("text-input").value;
-  let translatedWord = document.getElementById("translated-word");
-  let translatedWordItalian = document.getElementById(
-    "translated-word-italian"
-  );
+//These are the event listeners to run the function
 
-  fetch(
-    "https://language-translation.p.rapidapi.com/translateLanguage/translate?text=" +
-      textToTranslate +
-      "&type=plain&target=it",
-    {
-      method: "GET",
-      headers: {
-        "x-rapidapi-key": "74d8672b18msh0a1e3329629ffabp1d9947jsndffb0cba6f05",
-        "x-rapidapi-host": "language-translation.p.rapidapi.com",
-      },
-    }
-  )
-    .then((response) => {
-      console.log(response);
-      response.json().then((data) => {
-        console.log(data.translatedText);
-        translatedWordItalian.innerHTML = data.translatedText;
-      });
-    })
-    .catch((err) => {
-      console.error(err);
-    });
-}
-
-function newWordFrench() {
-  let textToTranslate = document.getElementById("text-input").value;
-  let translatedWord = document.getElementById("translated-word");
-  let translatedWordFrench = document.getElementById("translated-word-french");
-
-  fetch(
-    "https://language-translation.p.rapidapi.com/translateLanguage/translate?text=" +
-      textToTranslate +
-      "&type=plain&target=fr",
-    {
-      method: "GET",
-      headers: {
-        "x-rapidapi-key": "74d8672b18msh0a1e3329629ffabp1d9947jsndffb0cba6f05",
-        "x-rapidapi-host": "language-translation.p.rapidapi.com",
-      },
-    }
-  )
-    .then((response) => {
-      console.log(response);
-      response.json().then((data) => {
-        console.log(data.translatedText);
-        translatedWordFrench.innerHTML = data.translatedText;
-      });
-    })
-    .catch((err) => {
-      console.error(err);
-    });
-}
-
-function newWordPortuguese() {
-  let textToTranslate = document.getElementById("text-input").value;
-  let translatedWord = document.getElementById("translated-word");
-  let translatedWordPortuguese = document.getElementById(
-    "translated-word-portuguese"
-  );
-
-  fetch(
-    "https://language-translation.p.rapidapi.com/translateLanguage/translate?text=" +
-      textToTranslate +
-      "&type=plain&target=pt",
-    {
-      method: "GET",
-      headers: {
-        "x-rapidapi-key": "74d8672b18msh0a1e3329629ffabp1d9947jsndffb0cba6f05",
-        "x-rapidapi-host": "language-translation.p.rapidapi.com",
-      },
-    }
-  )
-    .then((response) => {
-      console.log(response);
-      response.json().then((data) => {
-        console.log(data.translatedText);
-        translatedWordPortuguese.innerHTML = data.translatedText;
-      });
-    })
-    .catch((err) => {
-      console.error(err);
-    });
-}
-// This allows you to submit words with the enter key
 addEventListener('keypress', function (e) {
   if (e.key === 'Enter') {
-     newWord()
+     newWord("es",translatedWord)
+     newWord("fr",translatedWordFrench)
+     newWord("it",translatedWordItalian)
+     newWord("pt",translatedWordPortuguese)
   }
 });
+translateButton.addEventListener("click", ()=>{
+  newWord("es",translatedWord)
+  newWord("fr",translatedWordFrench)
+  newWord("it",translatedWordItalian)
+  newWord("pt",translatedWordPortuguese)
+  
+
+})
