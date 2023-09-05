@@ -1,63 +1,57 @@
 let translatedWord = document.getElementById("translated-word");
 let translatedWordItalian = document.getElementById("translated-word-italian");
 let translatedWordFrench = document.getElementById("translated-word-french");
-let translatedWordPortuguese = document.getElementById("translated-word-portuguese");
-let translateButton = document.getElementById("translate-button")
+let translatedWordPortuguese = document.getElementById(
+  "translated-word-portuguese"
+);
+let translateButton = document.getElementById("translate-button");
 
-
-
-
-function newWord(url,lan) {
+async function newWord(url, lan) {
   let textToTranslate = document.getElementById("text-input").value;
-if (
+  if (
     (textToTranslate.length =
       0 || textToTranslate.length === 1 || textToTranslate === "")
   ) {
     alert("please enter a valid word");
   } else {
-    fetch(
-      "https://language-translation.p.rapidapi.com/translateLanguage/translate?text=" +
-        textToTranslate +
-        "&type=plain&target=" + url,
-      {
-        method: "GET",
-        headers: {
-          "x-rapidapi-key":
-            "74d8672b18msh0a1e3329629ffabp1d9947jsndffb0cba6f05",
-          "x-rapidapi-host": "language-translation.p.rapidapi.com",
-        },
-      }
-    )
-      .then((response) => {
-        console.log(response);
-        response.json()
-        .then((data) => {
-          console.log(data.translatedText);
-          lan.innerHTML = data.translatedText;
-         });
-      })
+    const apiurl =
+      "https://google-translate1.p.rapidapi.com/language/translate/v2";
+    const options = {
+      method: "POST",
+      headers: {
+        "content-type": "application/x-www-form-urlencoded",
+        "Accept-Encoding": "application/gzip",
+        "X-RapidAPI-Key": "74d8672b18msh0a1e3329629ffabp1d9947jsndffb0cba6f05",
+        "X-RapidAPI-Host": "google-translate1.p.rapidapi.com",
+      },
+      body: new URLSearchParams({
+        q: textToTranslate,
+        target: url,
+        source: "en",
+      }),
+    };
 
-      .catch((err) => {
-        console.error(err);
-      });
+    try {
+      const response = await fetch(apiurl, options);
+      const result = await response.json();
+      const finalWord = result.data.translations[0].translatedText;
+      lan.innerHTML = finalWord;
+    } catch (error) {
+      console.error(error);
+    }
   }
 }
-
-//These are the event listeners to run the function
-
-addEventListener('keypress', function (e) {
-  if (e.key === 'Enter') {
-     newWord("es",translatedWord)
-     newWord("fr",translatedWordFrench)
-     newWord("it",translatedWordItalian)
-     newWord("pt",translatedWordPortuguese)
+addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    newWord("es", translatedWord);
+    newWord("fr", translatedWordFrench);
+    newWord("it", translatedWordItalian);
+    newWord("pt", translatedWordPortuguese);
   }
 });
-translateButton.addEventListener("click", ()=>{
-  newWord("es",translatedWord)
-  newWord("fr",translatedWordFrench)
-  newWord("it",translatedWordItalian)
-  newWord("pt",translatedWordPortuguese)
-  
-
-})
+translateButton.addEventListener("click", () => {
+  newWord("es", translatedWord);
+  newWord("fr", translatedWordFrench);
+  newWord("it", translatedWordItalian);
+  newWord("pt", translatedWordPortuguese);
+});
